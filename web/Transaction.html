@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Transaction</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>CHOOSE A TRANSACTION TYPE</div>
+        <br>
+        <div>Please enter the type of account you'd like to use:</div>
+        <br>
+        <input name="IATS_DPM_AccountType" value="Enter checking or savings"/>
+        <br>
+        <form action="https://www.iatspayments.com/netgate/IATSDPMProcess.aspx" method="POST" name="IATS_DPM_Form"> 
+        <br>
+            <input type="submit" value="Submit Transaction"/> 
+        </form> 
+       
+    </body>
+</html>
