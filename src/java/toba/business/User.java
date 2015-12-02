@@ -26,11 +26,13 @@ public class User implements Serializable {
         this.state = ""; 
         this.zip = ""; 
         this.email = "";
+        this.username = this.lastName + this.zip;
+        this.password = "welcome1";
     }
 
     public User(String username, String password, String firstName, String lastName, String phone, String address, String city, String state, String zip, String email) {
-        this.username = username;
-        this.password = password;
+        this.username = this.lastName + this.zip;
+        this.password = "welcome1";
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
