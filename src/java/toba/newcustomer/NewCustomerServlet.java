@@ -33,19 +33,9 @@ public class NewCustomerServlet extends HttpServlet {
             String zip = request.getParameter("zip");
             String email = request.getParameter("email");
 
-            User user = new User();
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setPhone(phone);
-            user.setAddress(address);
-            user.setCity(city);
-            user.setState(state);
-            user.setZip(zip);
-            user.setEmail(email);
-            user.setUsername(lastName + zip);
-            user.setPassword("welcome1");
-
-            // validate the parameters
+            User user = new User( firstName, lastName, phone, address, city, state, zip, email );
+            
+            //validate the parameters
             String message;
             if (firstName == null || firstName.isEmpty() ||
                     lastName == null || lastName.isEmpty() ||
@@ -55,7 +45,8 @@ public class NewCustomerServlet extends HttpServlet {
                     state == null || state.isEmpty() ||
                     zip == null || zip.isEmpty() ||
                     email == null || email.isEmpty()
-            ) {
+            ) 
+            {
                 message = "Please fill out all the fields.";
                 url = "/New_Customer.html";
             }
@@ -63,10 +54,10 @@ public class NewCustomerServlet extends HttpServlet {
                 message = "";
                 url = "/Success.jsp";
 //                UserDB.insert(user);
+                HttpSession = request.getSession();
+                session.setAttribute("user", user);
             }
-            request.setAttribute("user", user);
-            request.setAttribute("message", message);
-
+            
         }
         
         getServletContext()
