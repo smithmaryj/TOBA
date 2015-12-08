@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package toba.login;
+package toba.password_reset;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import toba.business.User;
 
 /**
  *
  * @author Mary Jane
  */
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "password_reset", urlPatterns = {"/password_reset"})
+public class password_reset extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,29 +31,19 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String url = "/login.jsp";
-        
-        // Get the username and password from the user
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        HttpSession session = request.getSession();
-
-        // check username and password    
-        if(username.equals("jsmith@toba.com") && password.equals("letmein")) {
-            //direct jsmith@toba.com to the Account Activity webpage
-           User user = new User("Mary", "T", "12345", "5th St.", "St. Pete", "FL", "12345",
-                     "jsmith@toba.com");
-            session.setAttribute("user", user);
-            url = "/Account_Activity.jsp";
-        } 
-        else {
-            url = "/Login_failure.html";
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet password_reset</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet password_reset at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        getServletContext().getRequestDispatcher(url).forward(request, response);
-        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

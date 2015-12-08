@@ -4,9 +4,9 @@
     Author     : Mary Jane
 --%>
 
-<%@page contentType="Account_Activity.html" pageEncoding="utf-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url ="header.html" />
+<%@page contentType="user.jsp" pageEncoding="utf-8" %>
+        <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <c:import url ="header.html" />
 
         <h1>Please enter your username and password</h1>
         
@@ -45,7 +45,7 @@
                 <input type="submit" name="Submit" class="margin_left">
         </form> 
         
-        <c:import url ="header.html"/>
+        <c:import url ="footer.jsp"/>
     
     </body>
 </html>

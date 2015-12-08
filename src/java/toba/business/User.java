@@ -14,24 +14,25 @@ public class User implements Serializable {
     private String state; 
     private String zip; 
     private String email;
+    
 
     public User() {
-        this.username = "";
-        this.password = "" ;
-        this.firstName = "";
-        this.lastName = "";
-        this.phone = ""; 
-        this.address = ""; 
-        this.city = ""; 
-        this.state = ""; 
-        this.zip = ""; 
-        this.email = "";
-        this.username = this.lastName + this.zip;
-        this.password = "welcome1";
+       username = "";
+       password = "" ;
+       firstName = "";
+       lastName = "";
+       phone = ""; 
+       address = ""; 
+       city = ""; 
+       state = ""; 
+       zip = ""; 
+       email = "";
+       username = lastName + zip;
+       password = "welcome1";
     }
 
-    public User(String username, String password, String firstName, String lastName, String phone, String address, String city, String state, String zip, String email) {
-        this.username = this.lastName + this.zip;
+    public User(String firstName, String lastName, String phone, String address, String city, String state, String zip, String email) {
+        this.username = lastName + zip;
         this.password = "welcome1";
         this.firstName = firstName;
         this.lastName = lastName;

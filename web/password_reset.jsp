@@ -1,18 +1,15 @@
-<%-- 
-    Document   : password_reset
-    Created on : Nov 11, 2015, 6:52:18 AM
-    Author     : Mary Jane
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-         <FORM ACTION="ChangePassword" METHOD="GET">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/>includes/header.html" />
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/New_Customer.jsp">New Customer</a></li>
+                <li><a href="/login.jsp">Login</a></li>
+                <li><a href="/Account_Activity.jsp">Account Activity</a></li>
+                <li><a href="/Transaction.jsp">Transaction</a></li>
+            </ul>
+        </nav> 
+        <FORM ACTION="ChangePassword" METHOD="GET">
 <div id="login_box">
   <div id="login_header">
         Login
@@ -32,18 +29,9 @@
   </div>
 
   <div id="login_footer">
-  <!-- <script type="text/javascript">
-  function closewindow() {
-  window.close()
-  }
-  </script>-->
      <label>
     <input type="submit" onclick="location.href='http://localhost:8080/IntegrateAll/Index.jsp'" window.close();" name="Submit" id="Submit" value="Submit" class="send_button" />
     </label>
   </div>
 </div>
-    </body>
-</html>
-
- //ChangePassword.jsp
-   
+<c:import url="/includes/footer.jsp" />   

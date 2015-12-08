@@ -1,18 +1,15 @@
-<%-- 
-    Document   : Success
-    Created on : Nov 04, 2015, 12:55:56 AM
-    Author     : Mary Jane
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/includes/header.html" />
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/New_Customer.jsp">New Customer</a></li>
+                <li><a href="/login.jsp">Login</a></li>
+                <li><a href="/Account_Activity.jsp">Account Activity</a></li>
+                <li><a href="/Transaction.jsp">Transaction</a></li>
+            </ul>
+        </nav>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Success</title>
-    </head>
-    <body>
         <div>Fantastic! Your account has been successfully created!</div>
         <table>
             <tr>
@@ -58,3 +55,4 @@
         </table>
     </body>
 </html>
+  <c:import url="/includes/footer.jsp" />
