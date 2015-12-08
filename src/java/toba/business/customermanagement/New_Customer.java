@@ -12,12 +12,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import toba.business.User;
 
 /**
  *
  * @author Mary Jane
  */
-@WebServlet(name = "NewCustomer2", urlPatterns = {"/NewCustomer2"})
 public class New_Customer extends HttpServlet {
 
     /**
@@ -32,7 +33,7 @@ public class New_Customer extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String url = "/New_Customer.html";
+        String url = "/New_Customer.jsp";
         
         //get current action
         String firstName = request.getParameter("firstName");
@@ -53,14 +54,17 @@ public class New_Customer extends HttpServlet {
                     city == null || city.isEmpty() ||
                     state == null || state.isEmpty() ||
                     zip == null || zip.isEmpty() ||
-                    email == null || email.isEmpty()
-            ) {
-                message = "Please fill out all the fields.";
-                url = "/New_Customer.html";
-            } else {
+                    email == null || email.isEmpty()) {
+                    message = "Please fill out all the fields.";
+            }
+               
+        else {
+                User user = new User(firstName, lastName, phone, address, city, state, zip, email);
+                //UserDB.insert(user);
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
                 message = "";
                 url = "/Success.jsp";
-//                UserDB.insert(user);
                 }
                 getServletContext()
                 .getRequestDispatcher(url)

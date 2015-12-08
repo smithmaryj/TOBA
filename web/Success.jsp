@@ -53,6 +53,4 @@
                 <td>${user.password}</td>
             </tr>
         </table>
-    </body>
-</html>
-  <c:import url="/includes/footer.jsp" />
+<c:import url="/includes/footer.jsp" />
