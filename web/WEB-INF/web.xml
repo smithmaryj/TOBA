@@ -32,4 +32,11 @@
         <exception-type>java.lang.Throwable</exception-type>
         <location>/Error_java.jsp</location>
     </error-page>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/admin/login.html</form-login-page>
+            <form-error-page>/admin/login_error.html</form-error-page>
+        </form-login-config>
+    </login-config>
 </web-app>
